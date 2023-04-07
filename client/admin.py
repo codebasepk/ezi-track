@@ -13,7 +13,7 @@ class ClientResource(ModelResource):
         model = Client
 
         # Exclude the 'created_at' field from export
-        exclude = ('created_at')
+        exclude = ('id', 'created_at')
 
         # Set export field order
         export_order = (
