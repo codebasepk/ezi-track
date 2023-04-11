@@ -231,7 +231,7 @@ JAZZMIN_UI_TWEAKS = {
     "footer_small_text": False,
     "body_small_text": False,
     "brand_small_text": False,
-    "brand_colour": "navbar-brand-seondary",
+    "brand_colour": "navbar-brand-primary",
     "accent": "accent-primary",
     "navbar": "navbar-white navbar-light",
     "no_navbar_border": False,
