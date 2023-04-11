@@ -11,7 +11,7 @@ SIM_PROVIDER = (
 # Create your models here.
 class Client(models.Model):
     expire_date = models.CharField(_('EXPIRE DATE'), max_length=255)
-    email = models.EmailField(_('EMAIL'), max_length=100, unique=True)
+    email = models.EmailField(_('EMAIL'), max_length=100)
     sage_details = models.CharField(_('SAGE DETAILS'), max_length=255)
     sim_number = models.CharField(_('SIM NUMBER'), max_length=255, unique=True)
     tracker_imei = models.CharField(_('TRACKER IMEI'), max_length=255, unique=True)
