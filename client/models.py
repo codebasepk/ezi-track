@@ -10,6 +10,7 @@ SIM_PROVIDER = (
 
 # Create your models here.
 class Client(models.Model):
+    expire_date = models.DateField(_('EXPIRE DATE'))
     email = models.EmailField(_('EMAIL'), max_length=100, unique=True)
     sage_details = models.CharField(_('SAGE DETAILS'), max_length=255)
     sim_number = models.CharField(_('SIM NUMBER'), max_length=255, unique=True)
