@@ -22,7 +22,7 @@ class Client(models.Model):
     added = models.DateField(_('ADDED'))
     sim_expire = models.DateField(_('SIM EXPIRE'))
     sim_provider = models.CharField(_('SIM PROVIDER'), max_length=25, choices=SIM_PROVIDER)
-    status = models.CharField(_('SIM STATUS'), max_length=25, choices=SIM_STATUS)
+    status = models.CharField(_('SIM STATUS'), max_length=25, choices=SIM_STATUS, default="ACTIVE")
     description = models.TextField(_('EZITRACK DESCRIPTION'), null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
