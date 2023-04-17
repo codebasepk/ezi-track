@@ -203,7 +203,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
     #############
     # Relative paths to custom CSS/JS scripts (must be present in static files)
     "custom_css": "css/custom.css",
-    "custom_js": None,
+    "custom_js": "js/custom.js",
     # Whether to show the UI customizer on the sidebar
     "show_ui_builder": False,
     ###############
