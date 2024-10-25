@@ -17,7 +17,9 @@ class ClientResource(ModelResource):
 
         # Set export field order
         export_order = (
-        'email', 'sage_details', 'sim_number', 'tracker_imei', 'status', 'added', 'sim_expire', 'sim_provider','expire_date', 'description')
+            'email', 'sage_details', 'sim_number', 'tracker_imei', 'tracker_model', 'status',
+            'activated_at', 'suspended_at', 'added', 'sim_expire', 'sim_provider', 'expire_date',
+            'sold_by', 'sim_code', 'description')
 
     def get_export_headers(self):
         """
@@ -40,13 +42,16 @@ class ClientAdmin(ExportActionMixin, admin.ModelAdmin):
 
     # Set the fields to be displayed in the list view of the admin
     list_display = (
-    'email', 'sage_details', 'sim_number', 'tracker_imei', 'status', 'added', 'sim_expire', 'sim_provider', 'expire_date', 'created_at')
+        'email', 'sage_details', 'sim_number', 'tracker_imei', 'tracker_model', 'status',
+        'activated_at', 'suspended_at', 'added', 'sim_expire', 'sim_provider', 'expire_date',
+        'sold_by', 'sim_code', 'created_at')
 
     # Add search fields for the admin
-    search_fields = ['expire_date', 'email', 'sage_details', 'sim_number', 'tracker_imei', 'sim_expire', 'sim_provider', 'status']
+    search_fields = ['expire_date', 'email', 'sage_details', 'sim_number', 'tracker_imei',
+                     'tracker_model', 'sim_expire', 'sim_provider', 'status', 'sold_by', 'sim_code']
 
     # Define list filter fields
-    list_filter = ('status',)
+    list_filter = ('status', 'expire_date', 'sold_by', 'sim_code', 'tracker_model', 'activated_at', 'suspended_at', 'sim_provider')
 
 
 # Register the Client model with the custom admin class
