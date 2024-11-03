@@ -120,9 +120,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ########################
 JAZZMIN_SETTINGS: Dict[str, Any] = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "EziTrack Device and Sim Control",
+    "site_title": "EziTrack QMS",
     # Title on the brand, and login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "EziTrack Device and Sim Control",
+    "site_header": "EziTrack QMS",
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "img/logo.png",
     # Relative path to logo for your site, used for login logo (must be present in static files. Defaults to site_logo)
@@ -134,9 +134,9 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
     "site_icon": "img/icon.png",
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the EziTrack Device and Sim Control",
+    "welcome_sign": "Welcome to the EziTrack QMS",
     # Copyright on the footer
-    "copyright": "EziTrack Device and Sim Control",
+    "copyright": "EziTrack QMS",
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string
     # "search_model": ["auth.User", "auth.Group"],
