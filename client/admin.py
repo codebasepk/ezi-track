@@ -12,14 +12,15 @@ class ClientResource(ModelResource):
         # Set the model to be used for the resource
         model = Client
 
-        # Exclude the 'created_at' field from export
+        # Exclude the 'id' and 'created_at' field from export
         exclude = ('id', 'created_at')
 
         # Set export field order
         export_order = (
-            'email', 'sage_details', 'sim_number', 'tracker_imei', 'tracker_model', 'status',
-            'activated_at', 'suspended_at', 'added', 'sim_expire', 'sim_provider', 'expire_date',
-            'sold_by', 'sim_code', 'description')
+            'email', 'sage_details', 'tracker_imei', 'expire_date', 'tracker_expire_date',
+            'sim_number', 'sim_exp_date', 'sim_expire', 'sim_provider', 'tracker_status',
+            'tracker_model', 'sold_by', 'country', 'status'
+        )
 
     def get_export_headers(self):
         """
@@ -42,16 +43,23 @@ class ClientAdmin(ExportActionMixin, admin.ModelAdmin):
 
     # Set the fields to be displayed in the list view of the admin
     list_display = (
-        'email', 'sage_details', 'sim_number', 'tracker_imei', 'tracker_model', 'status',
-        'activated_at', 'suspended_at', 'added', 'sim_expire', 'sim_provider', 'expire_date',
-        'sold_by', 'sim_code', 'created_at')
+        'email', 'sage_details', 'tracker_imei', 'expire_date', 'tracker_expire_date',
+        'sim_number', 'sim_exp_date', 'sim_expire', 'sim_provider', 'tracker_status',
+        'tracker_model', 'sold_by', 'country', 'status'
+    )
 
     # Add search fields for the admin
-    search_fields = ['expire_date', 'email', 'sage_details', 'sim_number', 'tracker_imei',
-                     'tracker_model', 'sim_expire', 'sim_provider', 'status', 'sold_by', 'sim_code']
+    search_fields = [
+        'email', 'sage_details', 'tracker_imei', 'expire_date', 'sim_number',
+        'sim_exp_date', 'tracker_model', 'sim_provider', 'tracker_status', 'status',
+        'sold_by', 'sage_invoice_reference', 'sage_payment_reference'
+    ]
 
     # Define list filter fields
-    list_filter = ('status', 'expire_date', 'sold_by', 'sim_code', 'tracker_model', 'activated_at', 'suspended_at', 'sim_provider')
+    list_filter = (
+        'status', 'tracker_status', 'expire_date', 'sim_exp_date', 'sold_by',
+        'sim_provider', 'tracker_model', 'country'
+    )
 
 
 # Register the Client model with the custom admin class
