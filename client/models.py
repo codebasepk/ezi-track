@@ -4,7 +4,7 @@ from django.utils import timezone
 from django_countries.fields import CountryField
 
 SIM_EXPIRE_DATE = [
-    (f"SEXP{month}{year}", f"SEXP{month}{year}")
+    (f"EXP{month}{year}", f"EXP{month}{year}")
     for year in range(24, 36)
     for month in ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
 ]
