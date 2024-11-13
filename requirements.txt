@@ -2,3 +2,5 @@ django
 django-import-export
 django-jazzmin
 django-countries
+django-cors-headers
+whitenoise
