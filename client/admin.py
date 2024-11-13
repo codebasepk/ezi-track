@@ -16,18 +16,20 @@ class ClientResource(ModelResource):
 
         # Exclude following fields from export
         exclude = (
-            'id', 'added', 'tracker_activation_date',
-            'tracker_status_note', 'sim_active', 'sim_status_note',
-            'sim_code', 'sage_invoice_reference', 'sage_payment_reference',
-            'description', 'created_at'
+            'id',
+            # 'added', 'tracker_activation_date',
+            # 'tracker_status_note', 'sim_active', 'sim_status_note',
+            # 'sim_code', 'sage_invoice_reference', 'sage_payment_reference',
+            # 'description',
+            'created_at'
         )
 
         # Set export field order
-        export_order = (
-            'email', 'sage_details', 'tracker_imei', 'expire_date', 'tracker_expire_date',
-            'sim_number', 'sim_exp_date', 'sim_expire', 'sim_provider', 'tracker_status',
-            'tracker_model', 'sold_by', 'country', 'status'
-        )
+        # export_order = (
+        #     'email', 'sage_details', 'tracker_imei', 'expire_date', 'tracker_expire_date',
+        #     'sim_number', 'sim_exp_date', 'sim_expire', 'sim_provider', 'tracker_status',
+        #     'tracker_model', 'sold_by', 'country', 'status'
+        # )
 
     def get_export_headers(self, fields=None, selected_fields=None):
         """
